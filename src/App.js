@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+let show = true;
+
 class App extends Component {
     render() {
         return (
@@ -13,6 +15,13 @@ class App extends Component {
                 <NumberDescribe number={2} />
                 <NumberDescribe number={3} />
                 <HelloComponent {...objectForHelloComponent} />
+                <ChildrenComponent>
+                    Hello kids
+                    <Message text={'Message for the kids'} />
+                </ChildrenComponent>
+                <ChildrenComponent>{'This is valid syntax too '}</ChildrenComponent>
+                <p>Отрисовка реакт компонента по условию</p>
+                {show && <Message text={'Show is true'} />}
             </div>
         );
     }
@@ -102,5 +111,18 @@ let objectForHelloComponent = {
 // синтаксис инициализации обьекта черезез spread оператор - <HelloComponent {...objectForHelloComponent} />
 
 // 3.1.3 Потомки в JSX
+
+function ChildrenComponent(props) {
+    return(
+        <div>
+            <h2>This is component with children</h2>
+            <div className="children-block">
+                {props.children}
+            </div>
+        </div>
+    );
+}
+
+
 
 export default App;
