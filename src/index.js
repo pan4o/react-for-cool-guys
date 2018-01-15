@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import RefDom from './RefDom';
+import Portals from "./Portals";
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<RefDom />, document.getElementById('root'));
+ReactDOM.render(<Portals />, document.getElementById('root'));
 registerServiceWorker();
